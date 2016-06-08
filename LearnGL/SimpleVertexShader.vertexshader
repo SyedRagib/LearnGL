@@ -1,12 +1,14 @@
 #version 330 core
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec3 color;
 
-// Input vertex data, different for all executions of this shader.
-layout(location = 0) in vec3 vertexPosition_modelspace;
+out vec3 ourColor;
+uniform float offSet;
+out vec3 ourPosition;
 
-void main(){
-
-    gl_Position.xyz = vertexPosition_modelspace;
-    gl_Position.w = 1.0;
-
+void main()
+{
+    gl_Position = vec4(position.x+offSet, 1.0*position.y, position.z, 1.0f);
+    ourColor = color;
+	ourPosition = position;
 }
-
