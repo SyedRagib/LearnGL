@@ -1,2 +1,11 @@
 ﻿  Source.cpp
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(200): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(324): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(325): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(329): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(330): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(331): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(332): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(334): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(357): warning C4244: '-=': conversion from 'double' to 'GLfloat', possible loss of data
   LearnGL.vcxproj -> C:\Users\Syed\Documents\Visual Studio 2015\Projects\LearnGL\Debug\LearnGL.exe
