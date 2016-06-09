@@ -21,6 +21,10 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 
 float mixValue = 0.2f;
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
 // The MAIN function, from here we start the application and run the game loop
 int main()
 {
@@ -53,15 +57,16 @@ int main()
 	// Set up vertex data (and buffer(s)) and attribute pointers
 	GLfloat vertices[] = {
 		// Positions          // Colors           // Texture Coords
-		0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   2.0f, 2.0f, // Top Right
-		0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   2.0f, 0.0f, // Bottom Right
+		0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f, // Top Right
+		0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f, // Bottom Right
 		-0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f, // Bottom Left
-		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 2.0f  // Top Left 
+		-0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f  // Top Left 
 	};
 	GLuint indices[] = {  // Note that we start from 0!
 		0, 1, 3, // First Triangle
 		1, 2, 3  // Second Triangle
 	};
+
 	GLuint VBO, VAO, EBO;
 	glGenVertexArrays(1, &VAO);
 	glGenBuffers(1, &VBO);
@@ -155,6 +160,13 @@ int main()
 		glUniform1i(glGetUniformLocation(ourShader.Program, "ourTexture2"), 1);
 
 		glUniform1f(glGetUniformLocation(ourShader.Program, "mixValue"), mixValue);
+
+		glm::mat4 trans;
+		trans = glm::scale(trans, glm::vec3(abs(sin((GLfloat)glfwGetTime()))));
+		//trans = glm::rotate(trans, (GLfloat)glfwGetTime() / 2.0f, glm::vec3(0.0f, 0.0f, 1.0f));
+		//trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+		GLuint transformLoc = glGetUniformLocation(ourShader.Program, "transform");
+		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 		
 		glBindVertexArray(VAO);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
