@@ -11,7 +11,7 @@
 
 // Other includes
 #include "shader.hpp"
-
+#include "camera.hpp"
 
 // Function prototypes
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mode);
@@ -30,8 +30,6 @@ float mixValue = 0.2f;
 
 // camera values
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 bool keys[1024];
 
@@ -39,12 +37,12 @@ bool keys[1024];
 GLfloat deltaTime = 0.0f;	// Time between current frame and last frame
 GLfloat lastFrame = 0.0f;  	// Time of last frame
 
-GLfloat yaw = -90.0f;	// Yaw is initialized to -90.0 degrees since a yaw of 0.0 results in a direction vector pointing to the right (due to how Eular angles work) so we initially rotate a bit to the left.
-GLfloat pitch = 0.0f;
 GLfloat lastX = WIDTH / 2.0;
 GLfloat lastY = HEIGHT / 2.0;
 bool firstMouse = true;
-GLfloat fov = 45.0f;
+
+//Camera stuff
+Camera cam = Camera(cameraPos);
 
 // The MAIN function, from here we start the application and run the game loop
 int main()
@@ -218,7 +216,7 @@ int main()
 		// Activate shader
 		ourShader.Use();
 
-		// Draw container
+		// Setup texture
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, texture1);
 		glUniform1i(glGetUniformLocation(ourShader.Program, "ourTexture1"), 0);
@@ -236,9 +234,9 @@ int main()
 		GLfloat camZ = (GLfloat)cos(glfwGetTime()) * radius;
 		//cameraPos.x = camX;
 		//cameraPos.z = camZ;
-		view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
+		view = cam.GetViewMatrix();//glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
 
-		projection = glm::perspective(fov, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
+		projection = glm::perspective(cam.Zoom, (GLfloat)WIDTH / (GLfloat)HEIGHT, 0.1f, 100.0f);
 		// Get their uniform location
 		GLint modelLoc = glGetUniformLocation(ourShader.Program, "model");
 		GLint viewLoc = glGetUniformLocation(ourShader.Program, "view");
@@ -291,17 +289,14 @@ int main()
 void do_movement()
 {
 	// Camera controls
-	GLfloat cameraSpeed = 5.0f*deltaTime;
 	if (keys[GLFW_KEY_W])
-		cameraPos += cameraSpeed * cameraFront;
+		cam.ProcessKeyboard(Camera_Movement::FORWARD, deltaTime);
 	if (keys[GLFW_KEY_S])
-		cameraPos -= cameraSpeed * cameraFront;
+		cam.ProcessKeyboard(Camera_Movement::BACKWARD, deltaTime);
 	if (keys[GLFW_KEY_A])
-		cameraPos -= glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
+		cam.ProcessKeyboard(Camera_Movement::LEFT, deltaTime);
 	if (keys[GLFW_KEY_D])
-		cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
-
-	cameraPos.y = 0.0f;
+		cam.ProcessKeyboard(Camera_Movement::RIGHT, deltaTime);
 }
 
 // Is called whenever a key is pressed/released via GLFW
@@ -332,31 +327,13 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 	lastY = ypos;
 
 	GLfloat sensitivity = 0.05;	// Change this value to your liking
-	xoffset *= sensitivity;
-	yoffset *= sensitivity;
+	//xoffset *= sensitivity;
+	//yoffset *= sensitivity;
 
-	yaw += xoffset;
-	pitch += yoffset;
-
-	// Make sure that when pitch is out of bounds, screen doesn't get flipped
-	if (pitch > 89.0f)
-		pitch = 89.0f;
-	if (pitch < -89.0f)
-		pitch = -89.0f;
-
-	glm::vec3 front;
-	front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-	front.y = sin(glm::radians(pitch));
-	front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-	cameraFront = glm::normalize(front);
+	cam.ProcessMouseMovement(xoffset, yoffset);
 }
 
 void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
 {
-	if (fov >= 1.0f && fov <= 45.0f)
-		fov -= yoffset*0.05f;
-	if (fov <= 44.0f)
-		fov = 44.0f;
-	if (fov >= 45.0f)
-		fov = 45.0f;
+	cam.ProcessMouseScroll(yoffset);
 }
