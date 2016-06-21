@@ -162,8 +162,10 @@
     <ClInclude Include="shader.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SimpleFragmentShader.fragmentShader" />
-    <None Include="SimpleVertexShader.vertexshader" />
+    <None Include="lamp.frag" />
+    <None Include="lamp.vs" />
+    <None Include="lighting.frag" />
+    <None Include="lighting.vs" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LearnGL.rc" />

@@ -16,6 +16,15 @@
     <Filter Include="Assets">
       <UniqueIdentifier>{802bef7c-4a65-4fce-89ba-e867665de74f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Shaders">
+      <UniqueIdentifier>{0f783d02-3a01-4476-a084-af990237e98a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Frag">
+      <UniqueIdentifier>{ecaa0676-c9ae-4e7a-80f7-d54c5bc7f4c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Vertex">
+      <UniqueIdentifier>{ee4d9017-c8b3-4709-9f01-139a0c05b727}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -40,11 +49,17 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="SimpleFragmentShader.fragmentShader">
-      <Filter>Source Files</Filter>
+    <None Include="lighting.vs">
+      <Filter>Source Files\Shaders\Vertex</Filter>
     </None>
-    <None Include="SimpleVertexShader.vertexshader">
-      <Filter>Source Files</Filter>
+    <None Include="lighting.frag">
+      <Filter>Source Files\Shaders\Frag</Filter>
+    </None>
+    <None Include="lamp.frag">
+      <Filter>Source Files\Shaders\Frag</Filter>
+    </None>
+    <None Include="lamp.vs">
+      <Filter>Source Files\Shaders\Vertex</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

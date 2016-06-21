@@ -1,2 +1,10 @@
-﻿  camera.cpp
+﻿  Source.cpp
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(161): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(258): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(259): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(263): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(264): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(266): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(267): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(274): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   LearnGL.vcxproj -> C:\Users\Syed\Documents\Visual Studio 2015\Projects\LearnGL\Debug\LearnGL.exe
