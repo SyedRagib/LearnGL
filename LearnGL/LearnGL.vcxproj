@@ -175,6 +175,9 @@
     <Image Include="container.jpg">
       <DeploymentContent>true</DeploymentContent>
     </Image>
+    <Image Include="container2.png" />
+    <Image Include="container2_specular.png" />
+    <Image Include="matrix.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

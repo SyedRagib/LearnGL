@@ -74,5 +74,14 @@
     <Image Include="container.jpg">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="container2_specular.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="container2.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="matrix.jpg">
+      <Filter>Assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -37,7 +37,7 @@ void Camera::ProcessKeyboard(Camera_Movement direction, GLfloat deltaTime)
 		this->Position += this->Right * velocity;
 
 	//If you want to make sure you're camera is grounded
-	this->Position.y = 0;
+	//this->Position.y = 0;
 };
 
 void  Camera::ProcessMouseMovement(GLfloat xoffset, GLfloat yoffset, GLboolean constrainPitch)
