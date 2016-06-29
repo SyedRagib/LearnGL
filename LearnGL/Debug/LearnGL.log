@@ -1,10 +1,20 @@
 ﻿  Source.cpp
-c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(214): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(331): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(332): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(336): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(337): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(339): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(340): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(347): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(223): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(259): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(260): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(267): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(268): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(275): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(276): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(283): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(284): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(292): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(293): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(397): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(398): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(402): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(403): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(405): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(406): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\syed\documents\visual studio 2015\projects\learngl\learngl\source.cpp(413): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
   LearnGL.vcxproj -> C:\Users\Syed\Documents\Visual Studio 2015\Projects\LearnGL\Debug\LearnGL.exe
